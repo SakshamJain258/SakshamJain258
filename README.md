@@ -2,9 +2,9 @@
 
 > CS undergrad at Bennett University · building things that actually work · interested in the gap between research and production
 
-I work on real-time AI systems, RAG pipelines, and assistive technology. Most of my projects start from a problem I find genuinely interesting — Gestura started because live meetings have no accessibility layer for deaf users. The RAG analyzer started because I wanted a financial doc reader that works fully offline.
+I work on real-time AI systems, RAG pipelines, and assistive technology. Most of my projects are in the AIML Domain — Gestura started because live meetings have no accessibility layer for nonverbal individuals. The RAG analyzer started because I wanted a financial doc reader that works fully offline.
 
-Published researcher. AWS Certified ML Engineer. Currently in my 3rd year.
+Published researcher. AWS Certified ML Engineer. Currently in my 4th year.
 
 ---
 
