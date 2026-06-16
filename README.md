@@ -7,7 +7,7 @@
 </p>
 
 ### 🚀 Building high-performance real-time AI systems and local RAG architectures
-CS Undergrad at Bennett University (Class of 2026) · Published Researcher · AWS Certified Machine Learning Engineer - Associate
+CS Undergrad at Bennett University (Class of 2027) · Published Researcher · AWS Certified Machine Learning Engineer - Associate
 
 ---
 
