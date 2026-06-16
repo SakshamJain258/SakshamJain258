@@ -1,103 +1,106 @@
 # Saksham Jain
 
-> CS undergrad at Bennett University · building things that actually work · interested in the gap between research and production
+<p align="left">
+  <a href="https://www.linkedin.com/in/saksham-jain-6a74b128a/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://leetcode.com/u/Saksham_jain0110/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white" alt="LeetCode" /></a>
+  <a href="mailto:jsaksham677@gmail.com"><img src="https://img.shields.io/badge/Email-jsaksham677%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+</p>
 
-I work on real-time AI systems, RAG pipelines, and assistive technology. Most of my projects are in the AIML Domain — Gestura started because live meetings have no accessibility layer for nonverbal individuals. The RAG analyzer started because I wanted a financial doc reader that works fully offline.
-
-Published researcher. AWS Certified ML Engineer. Currently in my 4th year.
-
----
-
-## what i'm working on
-
-**Gestura v2** — ASL-to-caption desktop app for live video calls  
-Real upgrade from v1. Switched from a 16-word CNN+BiLSTM classifier to a full GestureTransformer (Conv1D + multi-head Transformer Encoder, ~3.5M params) trained on WLASL-300 — 3,667 videos, 300 word classes. Added a fingerspelling fallback layer and an LLM correction layer that turns raw predicted word streams into grammatical English. Multi-threaded architecture with virtual camera output — plugs directly into Zoom, Teams, Meet.
-
-`PyTorch` `MediaPipe` `PyQt6` `pyvirtualcam` `OpenCV` `TensorFlow`
-
-**RAG-based financial report analyzer** — fully local, no external API  
-PDF ingestion → chunking → embedding → Qdrant vector store → LLM inference via Ollama (Llama 3.2). Async FastAPI backend with multi-PDF support and stateful chat history. Dockerized. Streamlit frontend. Tuned chunking strategy specifically for dense financial text.
-
-`LangChain` `Qdrant` `Ollama` `FastAPI` `Docker` `Streamlit` `PyMuPDF`
+### 🚀 Building high-performance real-time AI systems and local RAG architectures
+CS Undergrad at Bennett University (Class of 2026) · Published Researcher · AWS Certified Machine Learning Engineer - Associate
 
 ---
 
-## project history — gestura
+## 🛠️ Tech Stack & Expertise
 
-The two versions are pretty different in scope and ambition.
-
-**v1 — proof of concept** *(2024)*  
-Single-threaded loop: capture → MediaPipe landmark extraction → Conv1D + BiLSTM + Attention → subtitle overlay → virtual camera output. Supported 16 ASL words. Worked, but the threading model blocked inference on every frame, causing lag in meetings. Model was a fixed 60-frame window classifier — no continuous signing support.
-
-**v2 — production rewrite** *(Jan 2025 → present)*  
-Three separate threads: `CaptureThread` / `InferenceThread` / `VirtualCamThread` — nothing blocks anything else. Model replaced with GestureTransformer on WLASL-300 (300 classes, 39.6% top-1 / 60.2% top-5). Added fingerspelling fallback triggered by confidence threshold. LLM correction layer at the end of the pipeline converts raw ASL word sequences into readable sentences. Temporal smoother prevents subtitle flicker on noisy frames.
-
-```
-Webcam → MediaPipe landmarks → sliding window buffer
-  → GestureTransformer → confidence check
-  → [high confidence] word prediction
-  → [low confidence] fingerspelling fallback (A–Z)
-  → LLM correction layer
-  → subtitle overlay → VirtualCam → Zoom / Teams / Meet
-```
-
----
-
-## other projects
-
-**HearTone Analyzer** — audiometry platform  
-Automated hearing threshold testing for air conduction across all age groups. Reduces manual intervention in the test workflow. Built with ML models (logistic regression, SVM, linear regression) for hearing loss classification and threshold prediction.
-
-`Python` `Scikit-learn` `PyQt6`
-
-**Zomato EDA** — exploratory data analysis  
-Data cleaning, missing value handling, cuisine distribution analysis, rating vs review volume correlations. Built for storytelling, not just numbers.
-
-`Pandas` `NumPy` `Matplotlib` `Seaborn`
+<table>
+  <tr>
+    <td valign="top" width="50%">
+      <strong>🧠 Deep Learning & AI</strong><br/>
+      • <b>Frameworks:</b> PyTorch · TensorFlow / Keras<br/>
+      • <b>Architectures:</b> GestureTransformer · CNN-LSTM · Attention Mechanisms<br/>
+      • <b>GenAI / LLMs:</b> LangChain · LangGraph · RAG · Ollama · Hugging Face
+    </td>
+    <td valign="top" width="50%">
+      <strong>⚙️ Software & Systems Engineering</strong><br/>
+      • <b>Languages:</b> Python · C++ · SQL<br/>
+      • <b>Backend / DBs:</b> FastAPI · Qdrant Vector Store · REST APIs<br/>
+      • <b>DevOps / Tools:</b> Docker · Git · PyQt6 · Streamlit<br/>
+      • <b>Computer Vision:</b> OpenCV · MediaPipe (Holistic/Pose/Hand tracking)
+    </td>
+  </tr>
+</table>
 
 ---
 
-## research
+## 🌟 Featured Projects
 
-**"Hybrid CNN–LSTM with Soft Attention for Real-Time ASL Recognition Using MediaPipe Landmarks"**  
-*Published — International Conference on Future of Computer Science with AI, Agra*
+### 🤟 Gestura v2 — Real-Time ASL-to-Caption Desktop App
+> **A production-oriented desktop app that translates live ASL gestures into captions and pipes them as a virtual camera for Zoom, Teams, and Google Meet.**
 
-Designed a CNN-LSTM architecture to capture spatial and temporal patterns from sequential MediaPipe landmark data. Introduced a custom soft attention mechanism to improve robustness across signing speeds and hand sizes. This was the research foundation that Gestura v1 was built on.
+<p align="left">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python">
+  <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=flat-square&logo=pytorch">
+  <img alt="MediaPipe" src="https://img.shields.io/badge/MediaPipe-0.10.14-00A58E?style=flat-square">
+  <img alt="PyQt6" src="https://img.shields.io/badge/PyQt6-Desktop-41CD52?style=flat-square&logo=qt">
+  <img alt="pyvirtualcam" src="https://img.shields.io/badge/pyvirtualcam-Virtual_Camera-0078D6?style=flat-square">
+</p>
 
----
+- **Three-Layer Recognition Architecture:** 
+  1. *Gesture Recognition:* A custom **GestureTransformer (~1.66M params)** trained on the **WLASL-300 dataset** (~3,667 videos) classifying landmark windows into 300 word classes.
+  2. *Fingerspelling Fallback:* Automatically falls back to an MLP letter classifier (A-Z) if word-level gesture confidence falls below a set threshold.
+  3. *LLM Grammar Layer:* Integrates a pause-activated Gemini API layer that corrects raw sign-word sequences (e.g., `"you name what"` → `"What is your name?"`).
+- **Multithreaded Systems Design:** Engineered a responsive PyQt6 app separating camera capture, model inference, temporal smoothing, and virtual camera output into 4 concurrent threads to prevent UI lag and maintain stable video streaming.
+- **Verification & Performance:** Achieved 39.6% top-1 and 60.2% top-5 validation accuracy on WLASL-300 landmarks (a highly complex dataset).
+- 🔗 **[Gestura Website](https://gestura-website.vercel.app/)** | **[Demo Video](https://www.youtube.com/watch?v=-pgvQyp-oF0)** | **[Research Paper](https://drive.google.com/file/d/1zT-9kl8uMixt35fh_YmMm7v4dmrmR6jh/view?usp=sharing)**
 
-## stack
+#### 🔄 Evolution: From Prototype (v1) to Production (v2)
 
-```
-languages     Python · C++ · SQL
-deep learning PyTorch · TensorFlow/Keras · CNN-LSTM · Transformers · Attention · CUDA
-genai / llm   LangChain · LangGraph · RAG · Prompt Engineering · Ollama · HuggingFace · Qdrant
-backend       FastAPI · Docker · Streamlit · REST APIs · Git
-data / cv     Scikit-learn · Pandas · NumPy · OpenCV · MediaPipe · Matplotlib
-systems       Multithreading · Concurrent Programming · Virtual Camera Integration
-```
-
----
-
-## certifications
-
-- **AWS Certified Machine Learning Engineer – Associate** (2026)  
-  SageMaker pipelines · feature engineering · model deployment
-- **Data Analytics Job Simulation — Deloitte Australia / Forage** (2025)  
-  Statistical analysis · Tableau
-
----
-
-## numbers
-
-- 180+ DSA problems on LeetCode → [Saksham_jain0110](https://leetcode.com/u/Saksham_jain0110/)
-- CGPA: 8.46 / 10.0
-- 1 published paper
+| Feature | Gestura v1 (2024 Prototype) | Gestura v2 (2025 Production) |
+|---|---|---|
+| **Vocabulary** | 16 controlled ASL words | **300 ASL words** (WLASL-300) |
+| **Model** | Conv1D + BiLSTM + Attention (Keras) | **Structured Embedding + Conv1D + Transformer** (PyTorch) |
+| **Architecture** | Single-threaded loop (lagged frame capture) | **4-Thread Concurrent Pipeline** (no blocking) |
+| **UX Output** | Raw frame overlay subtitles | **Virtual Camera feed ("Gestura Cam")** directly into meeting apps |
 
 ---
 
-## links
+### 📂 Local Financial Report Analyzer
+> **A fully local, privacy-first RAG pipeline for processing and analyzing complex financial documents without sending data to external APIs.**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/saksham-jain-6a74b128a/)
-[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=flat&logo=leetcode&logoColor=white)](https://leetcode.com/u/Saksham_jain0110/)
-[![Email](https://img.shields.io/badge/email-jsaksham677@gmail.com-grey?style=flat&logo=gmail)](mailto:jsaksham677@gmail.com)
+<p align="left">
+  <img alt="LangChain" src="https://img.shields.io/badge/LangChain-Framework-black?style=flat-square&logo=chainlink">
+  <img alt="Qdrant" src="https://img.shields.io/badge/Qdrant-Vector_Database-red?style=flat-square">
+  <img alt="Ollama" src="https://img.shields.io/badge/Ollama-Local_Inference-grey?style=flat-square">
+  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-Backend-009688?style=flat-square&logo=fastapi&logoColor=white">
+  <img alt="Docker" src="https://img.shields.io/badge/Docker-Containerized-2496ED?style=flat-square&logo=docker&logoColor=white">
+</p>
+
+- **Custom RAG Strategy:** Designed a recursive chunking and formatting pipeline optimized for parsing dense financial tables and multi-column PDFs using `PyMuPDF`.
+- **Vector Search & Storage:** Configured a local **Qdrant vector store** with optimized similarity metrics.
+- **Fully Offline Inference:** Orchestrated local LLM runs using **Ollama (Llama 3.2)** and LangChain to maintain 100% data privacy.
+- **Web App Shell:** Built an async FastAPI backend serving a responsive, clean Streamlit frontend. Dockerized the entire application for single-command deployment.
+
+---
+
+## 📈 Other Projects
+
+*   **HearTone Analyzer:** An automated audiometry platform for air conduction hearing threshold testing. Built with Scikit-learn (Logistic Regression, SVM, Linear Regression) and packaged as a PyQt6 desktop application.
+*   **Zomato EDA:** Exploratory data analysis project focused on data cleaning, ratings correlations, and cuisine distributions. Designed around narrative storytelling using Pandas, NumPy, Matplotlib, and Seaborn.
+
+---
+
+## 📝 Research & Publications
+
+📖 **"Hybrid CNN–LSTM with Soft Attention for Real-Time ASL Recognition Using MediaPipe Landmarks"**  
+*Published — International Conference on Future of Computer Science with AI (Agra)*  
+*   **Contribution:** Designed a spatial-temporal CNN-LSTM pipeline that processes MediaPipe skeleton landmark streams. Introduced a soft attention layer that weights key gesture moments over setup or transition noise. This research laid the technical foundation for Gestura's real-time performance.
+
+---
+
+## 🏅 Certifications & Education
+
+*   **AWS Certified Machine Learning Engineer – Associate** (2026)
+*   **Deloitte Australia Data Analytics Simulation** (Forage, 2025)
+*   **Education:** Bennett University, B.Tech in Computer Science · **CGPA: 8.46 / 10.0**
+*   **Problem Solving:** 180+ problems solved on LeetCode ([Profile Link](https://leetcode.com/u/Saksham_jain0110/))
