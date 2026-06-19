@@ -52,7 +52,8 @@ CS Undergrad at Bennett University (Class of 2027) · Published Researcher · AW
   3. *LLM Grammar Layer:* Integrates a pause-activated Gemini API layer that corrects raw sign-word sequences (e.g., `"you name what"` → `"What is your name?"`).
 - **Multithreaded Systems Design:** Engineered a responsive PyQt6 app separating camera capture, model inference, temporal smoothing, and virtual camera output into 4 concurrent threads to prevent UI lag and maintain stable video streaming.
 - **Verification & Performance:** Achieved 39.6% top-1 and 60.2% top-5 validation accuracy on WLASL-300 landmarks (a highly complex dataset).
-- 🔗 **[Gestura Website](https://gestura-website.vercel.app/)** | **[Demo Video](https://www.youtube.com/watch?v=-pgvQyp-oF0)** | **[Research Paper](https://drive.google.com/file/d/1zT-9kl8uMixt35fh_YmMm7v4dmrmR6jh/view?usp=sharing)**
+- **Production Packaging & CI/CD Deployment:** Bundled the desktop app with PyInstaller (~2.72 GB ZIP / ~4.31 GB extracted) for zero-dependency runs. Deployed the landing site via AWS Amplify CI/CD, serving global client downloads via an Amazon CloudFront CDN distribution securely connected to a private S3 bucket using Origin Access Control (OAC).
+- 🔗 **[Gestura Website](https://main.d9h6fx0138k7u.amplifyapp.com/)** | **[Demo Video](https://www.youtube.com/watch?v=-pgvQyp-oF0)** | **[Research Paper](https://drive.google.com/file/d/1zT-9kl8uMixt35fh_YmMm7v4dmrmR6jh/view?usp=sharing)**
 
 #### 🔄 Evolution: From Prototype (v1) to Production (v2)
 
